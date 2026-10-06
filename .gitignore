@@ -1,0 +1,25 @@
+.next
+.next-*
+node_modules
+data/store.json
+data/before-catalog-*.json
+npm-debug.log*
+.env
+.env.local
+tsconfig.tsbuildinfo
+output
+_archive
+.claude
+
+# e2e
+.e2e-data
+.next-e2e
+test-results
+.next-build
+.next-pages
+.pages-source
+out
+*.bak
+public/relationship-editor-preview.html
+public/brand
+public/fonts/Caveat*
