@@ -1,6 +1,6 @@
 {
   "mapId": "edtechlab-main-map",
-  "revision": 53,
+  "revision": 56,
   "snapshot": {
     "map": {
       "id": "edtechlab-main-map",
@@ -323,8 +323,7 @@
         "conflictRiskLevel": "medium",
         "relatedPtProducts": [
           "MaxPatrol SIEM",
-          "PT NAD",
-          "PT AF PRO"
+          "PT NAD"
         ],
         "locale": "ru",
         "implementationYear": 2025,
@@ -542,9 +541,7 @@
         "publicVisible": true,
         "exclusiveResultFlag": false,
         "conflictRiskLevel": "high",
-        "relatedPtProducts": [
-          "PT AF PRO"
-        ],
+        "relatedPtProducts": [],
         "locale": "ru",
         "implementationYear": 2025,
         "securityDomainIds": [
@@ -580,10 +577,8 @@
         "exclusiveResultFlag": true,
         "conflictRiskLevel": "high",
         "relatedPtProducts": [
-          "PT AF PRO",
           "PT NAD",
-          "MaxPatrol SIEM",
-          "PT NGFW"
+          "MaxPatrol SIEM"
         ],
         "locale": "ru",
         "implementationYear": 2025,
@@ -619,86 +614,13 @@
         "exclusiveResultFlag": true,
         "conflictRiskLevel": "medium",
         "relatedPtProducts": [
-          "PT NGFW",
           "MaxPatrol VM"
         ],
         "locale": "ru",
         "implementationYear": 2025,
         "securityDomainIds": [
-          "lane-network"
-        ]
-      },
-      {
-        "id": "prod-af-course",
-        "title": "PT AF PRO: эксплуатация защиты веб-приложений",
-        "shortTitle": "Курс по PT AF PRO",
-        "productType": "product_course",
-        "domainTags": [
-          "Сетевая защита",
-          "AppSec"
-        ],
-        "audienceTags": [
-          "Специалисты ИБ",
-          "Инженеры эксплуатации"
-        ],
-        "goalTags": [
-          "Эксплуатация продукта",
-          "Защита приложений"
-        ],
-        "shortOutcome": "Ускорение value от PT AF PRO в production-контуре.",
-        "description": "Продуктовый курс для клиентов PT AF PRO: настройка, эксплуатация и рост прикладной отдачи от продукта.",
-        "durationValue": 3,
-        "durationUnit": "months",
-        "accessModel": "Асинхронный курс",
-        "owner": "Product Education",
-        "status": "active",
-        "publicVisible": true,
-        "exclusiveResultFlag": false,
-        "conflictRiskLevel": "low",
-        "relatedPtProducts": [
-          "PT AF PRO"
-        ],
-        "locale": "ru",
-        "implementationYear": 2026,
-        "securityDomainIds": [
           "lane-network",
-          "lane-appsec",
-          "lane-soc"
-        ]
-      },
-      {
-        "id": "prod-ngfw-course",
-        "title": "PT NGFW: эксплуатация сетевой защиты",
-        "shortTitle": "Курс по PT NGFW",
-        "productType": "product_course",
-        "domainTags": [
-          "Сетевая защита"
-        ],
-        "audienceTags": [
-          "Сетевые инженеры",
-          "Архитекторы ИБ и ИТ"
-        ],
-        "goalTags": [
-          "Эксплуатация продукта",
-          "Сетевая защита"
-        ],
-        "shortOutcome": "Освоение PT NGFW для команд, у которых уже строится целевая архитектура.",
-        "description": "Отдельная adoption-ветка для эксплуатации сетевой защиты на стеке PT.",
-        "durationValue": 3,
-        "durationUnit": "months",
-        "accessModel": "Асинхронный курс",
-        "owner": "Product Education",
-        "status": "active",
-        "publicVisible": true,
-        "exclusiveResultFlag": false,
-        "conflictRiskLevel": "low",
-        "relatedPtProducts": [
-          "PT NGFW"
-        ],
-        "locale": "ru",
-        "implementationYear": 2026,
-        "securityDomainIds": [
-          "lane-network"
+          "lane-vm"
         ]
       },
       {
@@ -1717,20 +1639,6 @@
         "isVisible": true
       },
       {
-        "id": "inst-soc-af-course",
-        "mapId": "edtechlab-main-map",
-        "productId": "prod-af-course",
-        "laneId": "lane-soc",
-        "columnId": "product_course",
-        "x": 1020,
-        "y": 1392,
-        "width": 320,
-        "height": 148,
-        "zIndex": 1,
-        "isLocked": false,
-        "isVisible": true
-      },
-      {
         "id": "inst-edr-course",
         "mapId": "edtechlab-main-map",
         "productId": "prod-edr-course",
@@ -1838,34 +1746,6 @@
         "y": 3000,
         "width": 380,
         "height": 208,
-        "zIndex": 1,
-        "isLocked": false,
-        "isVisible": true
-      },
-      {
-        "id": "inst-af-course",
-        "mapId": "edtechlab-main-map",
-        "productId": "prod-af-course",
-        "laneId": "lane-network",
-        "columnId": "product_course",
-        "x": 1020,
-        "y": 2324,
-        "width": 320,
-        "height": 148,
-        "zIndex": 1,
-        "isLocked": false,
-        "isVisible": true
-      },
-      {
-        "id": "inst-ngfw-course",
-        "mapId": "edtechlab-main-map",
-        "productId": "prod-ngfw-course",
-        "laneId": "lane-network",
-        "columnId": "product_course",
-        "x": 1020,
-        "y": 2492,
-        "width": 320,
-        "height": 148,
         "zIndex": 1,
         "isLocked": false,
         "isVisible": true
@@ -2222,14 +2102,6 @@
         "note": "Предлагаемое соответствие по продукту и направлению. Точный набор кейсов BASE необходимо подтвердить."
       },
       {
-        "id": "eco-prod-waf-module-prod-af-course-practice",
-        "sourceId": "prod-waf-module",
-        "targetId": "prod-af-course",
-        "kind": "practice",
-        "status": "proposed",
-        "note": "Предлагаемое соответствие по продукту и направлению. Точный набор кейсов BASE необходимо подтвердить."
-      },
-      {
         "id": "eco-prod-edr-module-prod-edr-course-practice",
         "sourceId": "prod-edr-module",
         "targetId": "prod-edr-course",
@@ -2257,22 +2129,6 @@
         "id": "eco-prod-ot-module-prod-ot-course-practice",
         "sourceId": "prod-ot-module",
         "targetId": "prod-ot-course",
-        "kind": "practice",
-        "status": "proposed",
-        "note": "Предлагаемое соответствие по продукту и направлению. Точный набор кейсов BASE необходимо подтвердить."
-      },
-      {
-        "id": "eco-prod-nta-module-prod-ngfw-course-practice",
-        "sourceId": "prod-nta-module",
-        "targetId": "prod-ngfw-course",
-        "kind": "practice",
-        "status": "proposed",
-        "note": "Предлагаемое соответствие по продукту и направлению. Точный набор кейсов BASE необходимо подтвердить."
-      },
-      {
-        "id": "eco-prod-waf-module-prod-ngfw-course-practice",
-        "sourceId": "prod-waf-module",
-        "targetId": "prod-ngfw-course",
         "kind": "practice",
         "status": "proposed",
         "note": "Предлагаемое соответствие по продукту и направлению. Точный набор кейсов BASE необходимо подтвердить."
@@ -2350,33 +2206,9 @@
         "note": "Подтверждено владельцем портфеля 24.09.2026: программа связана с курсом BASE по эксплуатации продукта."
       },
       {
-        "id": "eco-prod-l1-practicum-prod-af-course-product",
-        "sourceId": "prod-l1-practicum",
-        "targetId": "prod-af-course",
-        "kind": "product",
-        "status": "confirmed",
-        "note": "Подтверждено владельцем портфеля 24.09.2026: программа связана с курсом BASE по эксплуатации продукта."
-      },
-      {
         "id": "eco-prod-traffic-practicum-prod-nad-course-product",
         "sourceId": "prod-traffic-practicum",
         "targetId": "prod-nad-course",
-        "kind": "product",
-        "status": "confirmed",
-        "note": "Подтверждено владельцем портфеля 24.09.2026: программа связана с курсом BASE по эксплуатации продукта."
-      },
-      {
-        "id": "eco-prod-arch-practicum-prod-ngfw-course-product",
-        "sourceId": "prod-arch-practicum",
-        "targetId": "prod-ngfw-course",
-        "kind": "product",
-        "status": "confirmed",
-        "note": "Подтверждено владельцем портфеля 24.09.2026: программа связана с курсом BASE по эксплуатации продукта."
-      },
-      {
-        "id": "eco-prod-arch-practicum-prod-af-course-product",
-        "sourceId": "prod-arch-practicum",
-        "targetId": "prod-af-course",
         "kind": "product",
         "status": "confirmed",
         "note": "Подтверждено владельцем портфеля 24.09.2026: программа связана с курсом BASE по эксплуатации продукта."
@@ -2460,6 +2292,14 @@
         "kind": "intensive",
         "status": "confirmed",
         "note": "Модуль тренажёра переупаковывается в одноимённый интенсив (добавлено 06.10.2026)."
+      },
+      {
+        "id": "eco-prod-vm-module-prod-hardening-practice",
+        "sourceId": "prod-vm-module",
+        "targetId": "prod-hardening",
+        "kind": "practice",
+        "status": "confirmed",
+        "note": "Модуль по устранению уязвимостей входит в связку практикума по харденингу ИТ-инфраструктуры."
       }
     ]
   }

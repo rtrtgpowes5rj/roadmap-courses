@@ -144,5 +144,57 @@ export function migrateEcosystem(store: AppStore): boolean {
     changed = true;
   }
 
+  if ((store.ecosystemSchemaVersion ?? 0) < 3) {
+    const removedCourseIds = new Set(["prod-af-course", "prod-ngfw-course"]);
+    const removedPtProducts = new Set(["PT AF PRO", "PT NGFW"]);
+
+    for (const snapshot of Object.values(store.drafts)) {
+      const removedInstanceIds = new Set(
+        snapshot.instances
+          .filter(instance => removedCourseIds.has(instance.productId))
+          .map(instance => instance.id)
+      );
+
+      snapshot.products = snapshot.products.filter(product => !removedCourseIds.has(product.id));
+      snapshot.products.forEach(product => {
+        product.relatedPtProducts = product.relatedPtProducts.filter(productName => !removedPtProducts.has(productName));
+      });
+      snapshot.instances = snapshot.instances.filter(instance => !removedCourseIds.has(instance.productId));
+      snapshot.edges = snapshot.edges.filter(edge =>
+        !removedInstanceIds.has(edge.sourceInstanceId) && !removedInstanceIds.has(edge.targetInstanceId)
+      );
+      snapshot.ecosystemLinks = (snapshot.ecosystemLinks ?? []).filter(link =>
+        !removedCourseIds.has(link.sourceId) && !removedCourseIds.has(link.targetId)
+      );
+
+      const hardening = snapshot.products.find(product => product.id === "prod-hardening");
+      if (hardening) {
+        hardening.securityDomainIds = [...new Set([...(hardening.securityDomainIds ?? []), "lane-network", "lane-vm"] )];
+      }
+
+      const hardeningPracticeLink: EcosystemLink = {
+        id: "eco-prod-vm-module-prod-hardening-practice",
+        sourceId: "prod-vm-module",
+        targetId: "prod-hardening",
+        kind: "practice",
+        status: "confirmed",
+        note: "Модуль по устранению уязвимостей входит в связку практикума по харденингу ИТ-инфраструктуры."
+      };
+      if (validLink(hardeningPracticeLink, snapshot.products) &&
+          !snapshot.ecosystemLinks.some(link =>
+            link.sourceId === hardeningPracticeLink.sourceId &&
+            link.targetId === hardeningPracticeLink.targetId &&
+            link.kind === hardeningPracticeLink.kind
+          )) {
+        snapshot.ecosystemLinks.push(hardeningPracticeLink);
+      }
+
+      store.draftRevisions ??= {};
+      store.draftRevisions[snapshot.map.id] = (store.draftRevisions[snapshot.map.id] ?? 0) + 1;
+    }
+    store.ecosystemSchemaVersion = 3;
+    changed = true;
+  }
+
   return changed;
 }
