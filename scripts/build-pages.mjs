@@ -23,6 +23,7 @@ await rm(path.join(stage,"app","api"),{recursive:true,force:true});
 await rm(path.join(stage,"public","brand"),{recursive:true,force:true});
 await rm(path.join(stage,"public","fonts","Caveat.ttf"),{force:true});
 await rm(path.join(stage,"public","fonts","Caveat-OFL.txt"),{force:true});
+await rm(path.join(stage,"public","relationship-editor-preview.html"),{force:true});
 for(const file of ["app/page.tsx","app/view/[mapId]/page.tsx","app/ecosystem/[mapId]/page.tsx","app/editor/page.tsx"]){
   const target=path.join(stage,file);
   const source=await readFile(target,"utf8");
